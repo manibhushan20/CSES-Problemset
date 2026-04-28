@@ -3,6 +3,8 @@
     "*.ejs": "html",
     "*.css": "tailwindcss",
     "iostream": "cpp",
-    "cstdlib": "cpp"
+    "cstdlib": "cpp",
+    "ostream": "cpp",
+    "limits": "cpp"
   }
 }

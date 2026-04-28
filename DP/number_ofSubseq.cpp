@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
+long long MOD = 1e9 + 7;
 
 int main()
 {
@@ -9,23 +10,21 @@ int main()
 
   vector<ll> a(n);
   for (int i = 0; i < n; i++)
+  {
     cin >> a[i];
+  }
 
-  vector<int> sorted;
+  vector<long long> dp(n + 1, 0);
+  long long res = n;
 
   for (int i = 0; i < n; i++)
   {
-    auto it = lower_bound(sorted.begin(), sorted.end(), a[i]);
-
-    if (it == sorted.end())
+    for (int j = 0; j < i; j++)
     {
-      sorted.push_back(a[i]);
-    }
-    else
-    {
-      *it = a[i];
+      if (a[j] < a[i])
+        res = (res + 1) % MOD;
     }
   }
 
-  cout << (int)sorted.size() << endl;
+  cout << res << endl;
 }
